@@ -37,7 +37,7 @@ namespace Apu.Data
         }
 
 
-        public async Task<List<City>> GetAll()
+        public async Task<List<City>> GetAllAsync()
         {
             return await db.QueryAsync<City>("select * from [City]");
         }

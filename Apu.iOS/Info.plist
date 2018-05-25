@@ -38,5 +38,7 @@
 	<string>New Entry</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>New Entry</string>
+	<key>Custom Property</key>
+	<string></string>
 </dict>
 </plist>

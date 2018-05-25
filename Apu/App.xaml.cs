@@ -15,7 +15,7 @@ namespace Apu
 
             MainPage = new Apu.Master();
         }
-         private static ApuDataBase db;
+            /*  private static ApuDataBase db;
         public static ApuDataBase DB
         {
             get
@@ -27,7 +27,7 @@ namespace Apu
                 }
                 return db;
             }
-        }
+        }*/
 
         protected override void OnStart()
         {

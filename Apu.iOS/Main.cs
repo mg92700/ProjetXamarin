@@ -15,6 +15,7 @@ namespace Apu.iOS
             var manager = new CLLocationManager();
             manager.RequestWhenInUseAuthorization();
             manager.RequestAlwaysAuthorization();
+
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");

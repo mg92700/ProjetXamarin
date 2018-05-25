@@ -11,7 +11,8 @@ namespace Apu.Droid
     {
         public string GetLocalFilePath(string filename)
         {
-            string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+          string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
             string libFolder = Path.Combine(docFolder, "..", "Libray", "Databases");
             if (!Directory.Exists(libFolder))
             {

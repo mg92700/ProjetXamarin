@@ -25,19 +25,23 @@ namespace Apu.Services
         private async static Task<Weather> GetDataAsync(string queryString)
         {
             var result = await DataService.GetDataFromServiceAsync(queryString).ConfigureAwait(false);
-
+            var weather = new Weather();
             if (result != null)
             {
-                var weather = new Weather();
-                weather.City = result["name"];
-                weather.Temperature = result["main"]["temp"].ToString().Replace(",", ".")+"°C";
-                weather.Humidity = result["main"]["humidity"].ToString().Replace(",", ".")+"%";
-                weather.Wind = result["wind"]["speed"].ToString().Replace(",", ".")+"Km";
-                DateTime time = new DateTime(1970, 1, 1, 0, 0, 0);
-                weather.Sun.Sunrise = time.AddSeconds((double)result["sys"]["sunrise"] + 7200);
-                weather.Sun.Sunset = time.AddSeconds((double)result["sys"]["sunset"] + 7200);
-                weather.Icon = result["weather"][0]["icon"].ToString();
-                return weather;
+                if (result["cod"] != "404")
+                {
+                   
+                    weather.City = result["name"];
+                    weather.Temperature = result["main"]["temp"].ToString().Replace(",", ".") + "°C";
+                    weather.Humidity = result["main"]["humidity"].ToString().Replace(",", ".") + "%";
+                    weather.Wind = result["wind"]["speed"].ToString().Replace(",", ".") + "Km";
+                    DateTime time = new DateTime(1970, 1, 1, 0, 0, 0);
+                    weather.Sun.Sunrise = time.AddSeconds((double)result["sys"]["sunrise"] + 7200);
+                    weather.Sun.Sunset = time.AddSeconds((double)result["sys"]["sunset"] + 7200);
+                    weather.Icon = result["weather"][0]["icon"].ToString();
+                    return weather;
+                }
+                return null;
             }
 
             return null;

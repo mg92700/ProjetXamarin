@@ -22,7 +22,15 @@ namespace Apu
             if (!string.IsNullOrEmpty(villeName))
             {
                 Weather weather = await Services.WeatherService.GetWeatherByCity(villeName);
-                BindingContext = weather;
+                if (weather != null)
+                {
+                    BindingContext = weather;
+                }
+                else
+                {
+                    await DisplayAlert("Erreur", "Ville inconue", "OK");
+
+                }
             }
             else
             {
