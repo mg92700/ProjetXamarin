@@ -1,7 +1,62 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Apu" x:Class="Apu.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Apu"
+             xmlns:converters="clr-namespace:Apu.Converters"
+             x:Class="Apu.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SunConverter x:Key="SunConverter" />
+            <converters:IconConverter x:Key="IconConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ajouter aux favoris"  Clicked="AddFavoriteClicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="10,50,50,50"   BackgroundColor="Silver"  >
+
+     <Label  HorizontalOptions="CenterAndExpand" Text="Meteo by Moh's" />   
+        <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="40" >
+            
+            <Button Image="geo.png"  WidthRequest="35" HeightRequest="35" Clicked="BtnGeoClicked" />
+            <Entry x:Name="EntryCity" Placeholder="Saisir une ville" />
+            <Button Text="OK" Clicked="BtnSearchClicked" BackgroundColor="White" />
+        </StackLayout>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Vertical"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                <Image Source="{Binding Icon, Converter={StaticResource IconConverter}}" WidthRequest="70" HeightRequest="70" />
+                <Label XAlign="Center" Text="{Binding City}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" />
+            </StackLayout>
+
+            <Label  Text="Température" Grid.Column="0" Grid.Row="1" />
+            <Label Text="{Binding Temperature}" Grid.Column="1" Grid.Row="1" />
+
+            <Label  Text="Vent" Grid.Column="0" Grid.Row="2" />
+            <Label  Text="{Binding Wind}" Grid.Column="1" Grid.Row="2" />
+
+            <Label  Text="Humidité" Grid.Column="0" Grid.Row="3" />
+            <Label  Text="{Binding Humidity}" Grid.Column="1" Grid.Row="3" />
+
+            <Label  Text="Soleil" Grid.Column="0" Grid.Row="4" />
+            <Label  Text="{Binding Sun, Converter={StaticResource SunConverter}}" Grid.Column="1" Grid.Row="4" />
+
+        </Grid>
+
     </StackLayout>
+
 </ContentPage>

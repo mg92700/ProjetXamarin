@@ -6,12 +6,12 @@ using SQLite;
 
 namespace Apu.Data
 {
-    public class CityDataBase
+    public class ApuDataBase
     {
         
        private readonly SQLiteAsyncConnection db;
 
-        public CityDataBase(string connection )
+        public ApuDataBase(string connection )
         {
             db = new SQLiteAsyncConnection(connection);
             db.CreateTableAsync<City>().Wait();

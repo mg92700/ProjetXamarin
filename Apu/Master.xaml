@@ -1,5 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Apu.Master">
-    <ContentPage.Content>
-    </ContentPage.Content>
-</ContentPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:pages="clr-namespace:Apu"
+             x:Class="Apu.Master">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Météo">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png" />  
+                </OnPlatform>    
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <pages:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Favoris">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png" />  
+                </OnPlatform>    
+            </NavigationPage.Icon>
+            
+            <x:Arguments>
+                <pages:FavoritesPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+   
+</TabbedPage>

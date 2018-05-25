@@ -1,4 +1,6 @@
 using System;
+using Apu.Data;
+using Apu.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +14,19 @@ namespace Apu
             InitializeComponent();
 
             MainPage = new Apu.Master();
+        }
+         private static ApuDataBase db;
+        public static ApuDataBase DB
+        {
+            get
+            {
+                
+                if (db == null)
+                {
+                    db = new ApuDataBase(DependencyService.Get<IFileHelper>().GetLocalFilePath("ApuSQLite.db3"));
+                }
+                return db;
+            }
         }
 
         protected override void OnStart()
