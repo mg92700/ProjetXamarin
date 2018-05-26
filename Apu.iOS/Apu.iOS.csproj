@@ -166,5 +166,6 @@
     <BundleResource Include="Resources\tab_about.png" />
     <BundleResource Include="Resources\tab_feed.png" />
     <BundleResource Include="Resources\geo.png" />
+    <BundleResource Include="Resources\icons8-soleil-80.png" />
   </ItemGroup>
 </Project>

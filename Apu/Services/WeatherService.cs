@@ -9,7 +9,7 @@ namespace Apu.Services
     public class WeatherService
     {
         const string url = "http://api.openweathermap.org/data/2.5/weather?";
-        const string key = "6771b98c28f9b75e2b459b5d13e82eae";
+        const string key = "f49ac7e73f19a2de0b631724f90dff34";
 
         public static async Task<Weather> GetWeatherByCity(string city)
         {

@@ -23,6 +23,7 @@
             <Button Image="geo.png"  WidthRequest="35" HeightRequest="35" Clicked="BtnGeoClicked" />
             <Entry x:Name="EntryCity" Placeholder="Saisir une ville" />
             <Button Text="OK" Clicked="BtnSearchClicked" BackgroundColor="White" />
+            <Button Text="POST" Clicked="BtnPostClicked" BackgroundColor="White" />
         </StackLayout>
 
         <Grid>

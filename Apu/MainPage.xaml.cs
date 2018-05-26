@@ -43,7 +43,7 @@ namespace Apu
             if (CrossGeolocator.IsSupported)
             {
                 var locator = CrossGeolocator.Current;
-                locator.DesiredAccuracy = 200;
+                locator.DesiredAccuracy = 50;
 
                 var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
                 var logitude = position.Longitude;
@@ -58,6 +58,13 @@ namespace Apu
             }
         }
 
+        public async void BtnPostClicked(object sender,EventArgs e)
+        {
+          var ok=  await Services.DataService.PostValueAsync();
+
+    
+
+        }
 
         public async void AddFavoriteClicked(object sender, EventArgs e)
         {
