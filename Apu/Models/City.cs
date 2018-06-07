@@ -9,7 +9,7 @@ namespace Apu.Models
         [PrimaryKey,AutoIncrement]
         public int ID { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public int Order { get; set; }
 

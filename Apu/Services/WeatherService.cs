@@ -11,9 +11,11 @@ namespace Apu.Services
         const string url = "http://api.openweathermap.org/data/2.5/weather?";
         const string key = "f49ac7e73f19a2de0b631724f90dff34";
 
+        public static string token = "moebzlkbsdbsilbeilvberibeziydbzyifbvei";
+
         public static async Task<Weather> GetWeatherByCity(string city)
         {
-            string queryString = $"{url}q={city}&appid={key}&units=metric";
+            string queryString = $"{url}q={city}&appid={key}&units=metric&token={token}";
             return await GetDataAsync(queryString);
         }
 

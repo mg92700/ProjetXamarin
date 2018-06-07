@@ -1,10 +1,12 @@
-using System;
 using Apu.Data;
-using Apu.Helpers;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Apu.Filters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+using Xamarin.Forms;
+
 namespace Apu
 {
     public partial class App : Application
@@ -15,19 +17,19 @@ namespace Apu
 
             MainPage = new Apu.Master();
         }
-            /*  private static ApuDataBase db;
+
+        private static ApuDataBase db;
         public static ApuDataBase DB
         {
             get
             {
-                
                 if (db == null)
                 {
                     db = new ApuDataBase(DependencyService.Get<IFileHelper>().GetLocalFilePath("ApuSQLite.db3"));
                 }
                 return db;
             }
-        }*/
+        }
 
         protected override void OnStart()
         {

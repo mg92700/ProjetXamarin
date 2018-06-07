@@ -1,9 +1,11 @@
 ﻿using System;
-namespace Apu.Helpers
+using System.Collections.Generic;
+using System.Text;
+
+namespace Apu.Filters
 {
     public interface IFileHelper
     {
-
         string GetLocalFilePath(string filename);
     }
 }

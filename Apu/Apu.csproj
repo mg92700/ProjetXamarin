@@ -4,10 +4,13 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.0.0" />
+    <PackageReference Include="FubarCoder.RestSharp.Portable.OAuth2" Version="4.0.8" />
+    <PackageReference Include="OAuth" Version="1.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.550146" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -16,6 +19,7 @@
     <Folder Include="Data\" />
     <Folder Include="Helpers\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Session\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="FavortitesPage.xaml.cs" />

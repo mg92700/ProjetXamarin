@@ -26,8 +26,6 @@
 	<string>Apu</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.ghoraf.mouhsin.APUXCODE</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -39,6 +37,12 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>New Entry</string>
 	<key>Custom Property</key>
+	<string></string>
+	<key>Custom Property1</key>
+	<string></string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>Custom Property2</key>
 	<string></string>
 </dict>
 </plist>

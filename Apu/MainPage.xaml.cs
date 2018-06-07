@@ -11,11 +11,23 @@ namespace Apu
 {
     public partial class MainPage : ContentPage
     {
+        public MainPage(City city):this()
+        {
+            InitializeComponent();
+            if(city!=null)
+            {
+
+                this.EntryCity.Text = city.Name;
+                BtnSearchClicked(this, null);
+                    
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
-        }
 
+        }
+        public List<City> cityFavorite = new List<City>();
         public async void BtnSearchClicked(object sender, EventArgs e)
         {
             string villeName = EntryCity.Text;
@@ -68,6 +80,12 @@ namespace Apu
 
         public async void AddFavoriteClicked(object sender, EventArgs e)
         {
+
+            Weather weather = BindingContext as Weather;
+            City city = new City();
+            city.Name = weather.City;
+            await App.DB.SaveAsync(city);
+            //await DisplayAlert("ajout", $"ville {city.Name} enrigistré dans les favoris", "OK");
 
         }
     }

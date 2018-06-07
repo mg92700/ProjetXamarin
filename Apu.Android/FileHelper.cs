@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Apu.Droid;
+using System;
 using System.IO;
-using Apu.Droid;
-using Apu.Helpers;
 using Xamarin.Forms;
 
-[assembly:Dependency(typeof(FileHelper))]
+[assembly: Dependency(typeof(FileHelper))]
 namespace Apu.Droid
 {
-    public class FileHelper: Apu.Helpers.IFileHelper
+    public class FileHelper : Apu.Filters.IFileHelper
     {
         public string GetLocalFilePath(string filename)
         {
